@@ -18,8 +18,8 @@ pipeline {
     }
     stage('phpunit') {
       agent {
-        docker {
-          image 'hello-world'
+        dockerfile {
+          filename 'Dockerfile'
         }
         
       }
