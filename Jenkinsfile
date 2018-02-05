@@ -19,8 +19,7 @@ pipeline {
     stage('phpunit') {
       agent {
         docker {
-          args '-v $(pwd):/app --rm'
-          image 'docker pull hello-world'
+          image 'hello-world'
         }
         
       }
