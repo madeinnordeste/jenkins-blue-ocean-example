@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'phpunit/phpunit'
-    }
-    
-  }
+  agent any
   stages {
     stage('Pull') {
       steps {
