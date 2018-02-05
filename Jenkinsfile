@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'phpunit/phpunit'
+    }
+    
+  }
   stages {
     stage('Pull') {
       steps {
@@ -21,5 +26,8 @@ pipeline {
         sh 'phpunit --version'
       }
     }
+  }
+  environment {
+    TESTEX = 'valor-do-testex'
   }
 }
