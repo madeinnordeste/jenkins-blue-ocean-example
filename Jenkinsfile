@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Pull') {
       steps {
-        git(url: 'https://github.com/madeinnordeste/jenkins-blue-ocean-example.git', branch: 'master', changelog: false)
+        git(url: 'https://github.com/madeinnordeste/jenkins-blue-ocean-example.git', branch: 'master')
       }
     }
     stage('cat') {
@@ -14,6 +14,11 @@ pipeline {
     stage('cp') {
       steps {
         sh 'cp index.php index2.php'
+      }
+    }
+    stage('phpunit') {
+      steps {
+        sh 'phpunit --version'
       }
     }
   }
